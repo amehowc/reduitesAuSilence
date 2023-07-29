@@ -2,40 +2,54 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>AR.js Image Tracking Boilerplate</title>
+    <title>Réduites Au Silence</title>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
     <script src="sketch.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body style="margin : 0px; overflow: hidden;">
-
-    <div id="overlay" class="ar-loader">
+  <body style="margin: 0px; overflow: hidden">
+    <div id="loading-overlay" class="loading">
       <div>Loading, please wait...</div>
+    </div>
+
+    <div id="scanning-overlay" class="hidden">
+      <div class="inner">
+        <img src="./src/affiche.png" />
+        <div class="scanline"></div>
+      </div>
     </div>
 
     <a-scene
       id="scene"
-      mindar-image="imageTargetSrc: ./src/targets.mind; filterMinCF:0.1; filterBeta: 10 missTolerance: 8"
+      mindar-image="imageTargetSrc: ./src/targets.mind; 
+                    filterMinCF:0.1; 
+                    filterBeta: 10; 
+                    missTolerance: 8;
+                    uiLoading: #loading-overlay;
+                    uiScanning: #scanning-overlay; "
       color-space="sRGB"
-      renderer="colorManagement: true, physicallyCorrectLights"
+      renderer="colorManagement: true"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
-      mindar-image="uiLoading: #overlay"
-      
     >
       <a-assets>
-        <img id="card" src="./src/affiche.png" />
-        <video id="target-practice" muted loop="true" src="./src/motion.mp4"></video>
+        <!-- <img id="card" src="./src/affiche.png" /> -->
+        <video
+          id="video-content"
+          muted
+          loop="true"
+          src="./src/motion.mp4"
+        ></video>
       </a-assets>
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      <a-entity id="my-marker" mindar-image-target="targetIndex: 0">
+      <a-entity id="target" mindar-image-target="targetIndex: 0">
         <a-plane
-          src="#target-practice"
+          src="#video-content"
           position="0 0 0"
           height="1"
           width="0.66"
-          scale ="1 1 1"
+          scale="1 1 1"
           rotation="0 0 0"
         ></a-plane>
         <script src="./sketch.js"></script>
