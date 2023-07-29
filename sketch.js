@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
   scene.addEventListener("arReady", event => {
 
     const loadingHolder = document.querySelector('#overlay');
-    console.log(loadingHolder)
     loadingHolder.classList.add("hidden")
 	  console.log("MindAR is ready")
 	});
