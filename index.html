@@ -16,12 +16,13 @@
 
     <a-scene
       id="scene"
-      mindar-image="imageTargetSrc: ./src/targets.mind"
+      mindar-image="imageTargetSrc: ./src/targets.mind filterMinCF:0.1; filterBeta: 10 missTolerance: 8"
       color-space="sRGB"
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
       mindar-image="uiLoading: #overlay"
+      
     >
       <a-assets>
         <img id="card" src="./src/affiche.png" />
