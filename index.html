@@ -10,10 +10,15 @@
   </head>
   <body style="margin: 0px; overflow: hidden">
     <div id="loading-overlay" class="loading">
-      <div>Loading, please wait...</div>
+      <div>Chargement ...</div>
     </div>
 
-    <div id="scanning-overlay" class="hidden">
+    <div id="checking-overlay" class="hidden">
+      <p>Toucher pour <br>activer</p>
+      <!-- <button id="play-button">Toucher pour <br>activer</button> -->
+    </div>
+
+    <div id="scanning-overlay">
       <div class="inner">
         <img src="./src/affiche.png" />
         <div class="scanline"></div>
@@ -51,7 +56,6 @@
           scale="1 1 1"
           rotation="0 0 0"
         ></a-plane>
-        <script src="./sketch.js"></script>
       </a-entity>
     </a-scene>
   </body>
