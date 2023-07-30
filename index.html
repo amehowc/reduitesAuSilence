@@ -30,7 +30,8 @@
     <a-scene
       id="scene"
       mindar-image="imageTargetSrc: ./src/targets.mind; 
-                   
+                    filterMinCF:0.000001; 
+                    filterBeta: 1000; 
                     missTolerance: 8;
                     uiLoading: #loading-overlay;
                     uiScanning: #scanning-overlay; "
