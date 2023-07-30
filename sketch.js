@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   checkingOverlay.addEventListener("click", () => {
     if (typeof video.play === "function") {
       video.play();
+      video.currentTime = 0;
     }
     checkingOverlay.classList.add("hidden")
   });
