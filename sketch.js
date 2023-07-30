@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const scene = document.querySelector("#scene");
   const target = document.querySelector("#target");
   const video = document.querySelector("#video-content");
-  const playButton = document.querySelector("#play-button");
   const checkingOverlay = document.querySelector("#checking-overlay");
   video.pause();
   video.currentTime = 0;
